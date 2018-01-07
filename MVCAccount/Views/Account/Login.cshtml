@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using MVCAccount.Models
+@model LoginVM
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div> 
+        
+        <label>@ViewBag.Message</label>
+
+        @using (Html.BeginForm())
+        {
+            @Html.TextBoxFor(x=> x.Email)
+            @Html.PasswordFor(x=> x.Password)
+            @Html.CheckBoxFor(x=> x.RememberMe)
+
+            <input type="submit" name="name" value="Oturum Aç" />
+        }
+
+    </div>
+</body>
+</html>

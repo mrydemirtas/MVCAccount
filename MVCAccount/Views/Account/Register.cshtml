@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using MVCAccount.Models
+@model RegisterVM
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+        @* html helpers *@
+
+        @using (Html.BeginForm())
+        {
+
+            @Html.ValidationSummary(false)
+
+            @Html.TextBoxFor(x=> x.Email,new {@placeholder="eposta giriniz",@class="form-control" })
+            <br />
+            @Html.PasswordFor(x => x.Password,new {@placeholder="parola giriniz" })
+            <br />
+            @Html.PasswordFor(x=> x.PasswordConfirm,new {@placeholder="parola tekrar" })
+            <br />
+
+            <input type="submit" name="name" value="Kaydet" />
+        }
+</body>
+</html>
